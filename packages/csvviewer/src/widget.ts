@@ -364,7 +364,7 @@ export class CSVViewer extends Widget {
   /**
    * Create the model for the grid.
    */
-  private _updateGrid(): void {
+  protected _updateGrid(): void {
     const data: string = this._context.model.toString();
     const delimiter = this._delimiter;
     const oldModel = this._grid.dataModel as DSVModel;
@@ -381,7 +381,7 @@ export class CSVViewer extends Widget {
   /**
    * Update the renderer for the grid.
    */
-  private _updateRenderer(): void {
+  protected _updateRenderer(): void {
     if (this._baseRenderer === null) {
       return;
     }
@@ -401,15 +401,15 @@ export class CSVViewer extends Widget {
     });
   }
 
-  private _context: DocumentRegistry.Context;
-  private _grid: DataGrid;
-  private _searchService: GridSearchService;
-  private _monitor: ActivityMonitor<
+  protected _context: DocumentRegistry.Context;
+  protected _grid: DataGrid;
+  protected _searchService: GridSearchService;
+  protected _monitor: ActivityMonitor<
     DocumentRegistry.IModel,
     void
   > | null = null;
   private _delimiter = ',';
-  private _revealed = new PromiseDelegate<void>();
+  protected _revealed = new PromiseDelegate<void>();
   private _baseRenderer: TextRenderConfig | null = null;
 }
 
