@@ -569,16 +569,16 @@ export class DSVModel extends DataModel implements IDisposable {
   }
 
   // Parser settings
-  private _delimiter: string;
-  private _quote: string;
-  private _quoteEscaped: RegExp;
-  private _parser: 'quotes' | 'noquotes';
-  private _rowDelimiter: string;
+  protected _delimiter: string;
+  protected _quote: string;
+  protected _quoteEscaped: RegExp;
+  protected _parser: 'quotes' | 'noquotes';
+  protected _rowDelimiter: string;
 
   // Data values
-  private _data: string;
-  private _rowCount: number | undefined = 1;
-  private _columnCount: number | undefined;
+  protected _data: string;
+  protected _rowCount: number | undefined = 1;
+  protected _columnCount: number | undefined;
 
   // Cache information
   /**
